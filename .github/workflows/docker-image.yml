@@ -16,6 +16,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # --- AJOUT 1 : INDISPENSABLE POUR COMPILER EN ARM SUR GITHUB ---
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -30,6 +34,8 @@ jobs:
         with:
           context: .
           push: true
+          # --- AJOUT 2 : C'est ici qu'on crée l'image compatible Mac (arm64) ET PC (amd64) ---
+          platforms: linux/amd64,linux/arm64
           tags: |
             jaljim55/flask:latest
             jaljim55/flask:${{ github.sha }}
