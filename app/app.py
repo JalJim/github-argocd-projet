@@ -101,15 +101,17 @@ def hello_world():
         <h1>HEH Projet</h1>
 
         <div class="video-container">
-            <video controls autoplay muted loop>
-                <source src="maroc_edit.mp4" type="video/mp4">
-                Votre navigateur ne supporte pas la balise vidéo.
-            </video>
+            <iframe 
+                src="https://www.youtube.com/embed/YkppFSOXyiY?si=3D53dXdcyMXfwLac" 
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
         </div>
         
         <div class="names">
             <p>Tricarico</p>
-            <p>Adam</p>
+            <p>ADAM</p>
         </div>
     </div>
 </body>
